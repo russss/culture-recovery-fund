@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Culture Recovery Fund Grants</title>
+  <script src="https://d3js.org/d3.v6.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+<style>
+  body {
+    min-width: 900px;
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  a, a:visited, body {
+    color: #333;
+  }
+
+  .tooltip {
+    background-color: #333;
+    font-size: 14px;
+    color: #eee;
+    position: absolute;
+    min-width: 100px;
+    max-width: 200px;
+    min-height: 40px;
+    padding: 2px 4px;
+    pointer-events: none;
+    border-radius: 4px;
+  }
+
+  #treemap div {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #treemap div.inner {
+    text-overflow: ellipsis;
+  }
+
+  #treemap div.container {
+    padding: 2px;
+    position: absolute;
+    cursor: default;
+    font-size: 11px;
+  }
+  #treemap .amount {
+    font-size: 0.8em;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+  <h1>Culture Recovery Fund Grants</h1>
+  <p>The UK government is providing £500m of grants to "cultural organisations" in order to help them recover from the impact of COVID-19.
+      This page attempts to analyse the data on these grants provided so far.
+  </p>
+  <p>Organisation names provided in the data release by Arts Council England have been semi-automatically matched to Companies House and
+    Charity Commission data, as well as other sources, in order to classify them. The data used <a href="https://docs.google.com/spreadsheets/d/1zF13S2WZXGAni0-cy53iXiaCdaHI4MeWFgwiGu9oSB8" target="_blank">can be viewed here</a> &mdash; please suggest a change if you spot an error.</p>
+  <p>This page is fairly heavy on the Javascript and is likely to be unusuable on phones, sorry.</p>
+  <h2>Stats</h2>
+  <div id="stats"></div>
+  <h2>Breakdown</h2>
+  <p>Hold your mouse over any square to see more detail.</p>
+  <div id="treemap"></div>
+  <h2>Sources</h2>
+  <p>Data from Arts Council England: <a href="https://www.artscouncil.org.uk/publication/culture-recovery-fund-data">Culture Recovery Fund: Data</a></p>
+  <p>Analysis by <a href="https://russ.garrett.co.uk">Russ Garrett</a> (<a href="https://twitter.com/russss">@russss</a>).</p>
+  <script src="treemap.js"></script>
+</body>
+</html>
