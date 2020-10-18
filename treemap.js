@@ -91,7 +91,7 @@ d3.json("./crf.json").then(function(data) {
     .attr("style", d => `height: ${d.y1 - d.y0}px`)
     .on("mouseover", (event, d) => {
       tooltip.html(
-        `${d.data.name}<br>Grant: £${format(d.value)}<br>Round: ${
+        `<strong>${d.data.name}</strong><br>Grant: £${format(d.value)}<br>Round: ${
           d.data.round
         }<br>Region: ${d.data.region}`
       );
@@ -112,7 +112,7 @@ d3.json("./crf.json").then(function(data) {
       x = x - tooltip_rect.width;
     }
     tooltip.style("left", x + "px");
-    tooltip.style("top", event.pageY - tooltip_rect.height + "px");
+    tooltip.style("top", event.pageY - tooltip_rect.height - 5 + "px");
   });
 
   container
