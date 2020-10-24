@@ -1,8 +1,8 @@
 let color = d3.scaleOrdinal(d3.schemeCategory10);
 var opacity = d3
   .scaleLinear()
-  .domain([50000, 1000000])
-  .range([0.2, 0.6]);
+  .domain([50000, 3000000])
+  .range([0.15, 0.6]);
 
 let format = d3.format(".3~s");
 
